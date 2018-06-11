@@ -1,1 +1,1 @@
-include ':app', ':xk_spinner'
+include ':app', ':xk_spinner', ':xk_popupwindow'
