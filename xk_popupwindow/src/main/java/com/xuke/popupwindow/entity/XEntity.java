@@ -1,4 +1,4 @@
-package com.xuke.popupwindow.Entity;
+package com.xuke.popupwindow.entity;
 
 public class XEntity {
 

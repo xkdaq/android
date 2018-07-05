@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/cy_net" />
             <option value="$PROJECT_DIR$/xk_popupwindow" />
             <option value="$PROJECT_DIR$/xk_spinner" />
           </set>

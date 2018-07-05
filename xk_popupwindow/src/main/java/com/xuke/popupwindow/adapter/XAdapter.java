@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.xuke.popupwindow.Entity.XEntity;
+import com.xuke.popupwindow.entity.XEntity;
 import com.xuke.popupwindow.R;
 
 import java.util.List;

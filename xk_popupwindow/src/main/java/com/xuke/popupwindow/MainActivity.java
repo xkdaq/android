@@ -2,18 +2,21 @@ package com.xuke.popupwindow;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import com.xuke.popupwindow.Entity.XEntity;
+import com.xuke.popupwindow.entity.XEntity;
 import com.xuke.popupwindow.adapter.XAdapter;
 
 import java.util.ArrayList;
@@ -59,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private int checkedPosition;
     private XAdapter xAdapter;
     private WindowManager.LayoutParams params;
+    private PopupWindow popupWindow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         viewById.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showPop();
+                showPop2();
             }
         });
 
@@ -129,6 +133,38 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
     }
+
+    private void showPop2(){
+        View infoView = LayoutInflater.from(this).inflate(R.layout.pop_invite_auth, null);
+        EditText etInviteCode = (EditText) infoView.findViewById(R.id.et_invite_code);
+        TextView tvSubmit = (TextView) infoView.findViewById(R.id.tv_submit);
+
+        popupWindow = new PopupWindow(infoView, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        popupWindow.setFocusable(true);
+        popupWindow.setOutsideTouchable(false);
+        popupWindow.update();
+        popupWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        popupWindow.showAtLocation(this.getWindow().getDecorView(), Gravity.CENTER, 0, 0);
+        setWindowParams(0.7f);
+        popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                setWindowParams(1.0f);
+            }
+        });
+        tvSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                popupWindow.dismiss();
+                setWindowParams(1.0f);
+            }
+        });
+    }
+
+
+
+
+
 
     /**
      * 设置屏幕的背景度
