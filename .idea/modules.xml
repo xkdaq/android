@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Android.iml" filepath="$PROJECT_DIR$/Android.iml" />
+      <module fileurl="file://D:\xuke\android\android\Android.iml" filepath="D:\xuke\android\android\Android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android.iml" filepath="$PROJECT_DIR$/android.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\xuke\android\android\app\app.iml" filepath="D:\xuke\android\android\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/cy_net/cy_net.iml" filepath="$PROJECT_DIR$/cy_net/cy_net.iml" />
+      <module fileurl="file://D:\xuke\android\android\cy_net\cy_net.iml" filepath="D:\xuke\android\android\cy_net\cy_net.iml" />
       <module fileurl="file://$PROJECT_DIR$/xk_popupwindow/xk_popupwindow.iml" filepath="$PROJECT_DIR$/xk_popupwindow/xk_popupwindow.iml" />
+      <module fileurl="file://D:\xuke\android\android\xk_popupwindow\xk_popupwindow.iml" filepath="D:\xuke\android\android\xk_popupwindow\xk_popupwindow.iml" />
       <module fileurl="file://$PROJECT_DIR$/xk_spinner/xk_spinner.iml" filepath="$PROJECT_DIR$/xk_spinner/xk_spinner.iml" />
+      <module fileurl="file://D:\xuke\android\android\xk_spinner\xk_spinner.iml" filepath="D:\xuke\android\android\xk_spinner\xk_spinner.iml" />
     </modules>
   </component>
 </project>
