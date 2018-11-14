@@ -1,5 +1,6 @@
 package com.xuke.android;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,8 +8,11 @@ import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.xuke.android.tablayout.TabLayoutActivity;
 
 import java.lang.reflect.Field;
 
@@ -17,12 +21,15 @@ import java.lang.reflect.Field;
  * tablayout
  */
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button btnTab = (Button) findViewById(R.id.btn_tab);
+        btnTab.setOnClickListener(this);
 
         final TabLayout id_tabl_one_s = (TabLayout) findViewById(R.id.id_tab_one_fill_fixed);
         id_tabl_one_s.addTab(id_tabl_one_s.newTab().setText("新闻"));
@@ -149,5 +156,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view.getId() == R.id.btn_tab) {
+            startActivity(new Intent(this, TabLayoutActivity.class));
+        }
     }
 }
