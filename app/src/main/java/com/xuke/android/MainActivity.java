@@ -67,9 +67,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         id_tabl_four_s2.addTab(id_tabl_four_s2.newTab().setText("热门"));
         id_tabl_four_s2.addTab(id_tabl_four_s2.newTab().setText("日报"));
 
+        TabLayout id_tabl_four_s3 = (TabLayout) findViewById(R.id.id_tab_four_center_scrollable3);
+        id_tabl_four_s3.addTab(id_tabl_four_s3.newTab().setText("新闻"));
+        id_tabl_four_s3.addTab(id_tabl_four_s3.newTab().setText("热门新闻"));
+        id_tabl_four_s3.addTab(id_tabl_four_s3.newTab().setText("日报新闻"));
 
-        setTabLayoutWidth(id_tabl_four_s1, 10, 10);
-        setTabLayoutWidth(id_tabl_four_s2, 15, 15);
+        TabLayout id_tabl_four_s4 = (TabLayout) findViewById(R.id.id_tab_four_center_scrollable4);
+        id_tabl_four_s4.addTab(id_tabl_four_s4.newTab().setText("新闻"));
+        id_tabl_four_s4.addTab(id_tabl_four_s4.newTab().setText("热门新闻"));
+        id_tabl_four_s4.addTab(id_tabl_four_s4.newTab().setText("日报新闻"));
+
+
+        setTabLayoutWidth(id_tabl_four_s1, 10, 10, false);
+        setTabLayoutWidth(id_tabl_four_s2, 15, 15, false);
+
+        setTabLayoutWidth(id_tabl_four_s3, 20, 20, true);
+        setTabLayoutWidth(id_tabl_four_s4, 25, 25, true);
 
     }
 
@@ -115,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /**
      * 反射拿到文字的属性对指示器进行操作
      */
-    public void setTabLayoutWidth(TabLayout tabLayout, int leftDip, int rightDip) {
+    public void setTabLayoutWidth(TabLayout tabLayout, int leftDip, int rightDip, boolean isSameLength) {
         tabLayout.post(() -> {
             try {
                 //拿到tabLayout的mTabStrip属性
@@ -142,7 +155,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     //设置tab左右间距 注意这里不能使用Padding 因为源码中线的宽度是根据 tabView的宽度来设置的
                     LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) tabView.getLayoutParams();
-                    params.width = width + left + right;   //如果只是width就是指示器和文字长度一样长
+                    if (isSameLength) {
+                        params.width = width;   //tabview的宽就和文字指示器长度一样长
+                    } else {
+                        params.width = width + left + right;   //加一个左右边距,可自定义
+                    }
                     params.leftMargin = left;
                     params.rightMargin = right;
                     tabView.setLayoutParams(params);

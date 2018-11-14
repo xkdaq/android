@@ -13,8 +13,8 @@
         android:id="@+id/btn_tab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="visible"
-        android:text="tab" />
+        android:text="tab"
+        android:visibility="visible" />
 
 
     <TextView
@@ -63,7 +63,6 @@
         app:tabTextColor="@color/c_9b9b9b" />
 
 
-
     <!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
 
     <TextView
@@ -97,6 +96,28 @@
 
     <android.support.design.widget.TabLayout
         android:id="@+id/id_tab_four_center_scrollable2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabGravity="center"
+        app:tabIndicatorColor="@color/colorAccent"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="@color/colorAccent"
+        app:tabTextColor="@color/c_9b9b9b" />
+
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/id_tab_four_center_scrollable3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:tabGravity="center"
+        app:tabIndicatorColor="@color/colorAccent"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="@color/colorAccent"
+        app:tabTextColor="@color/c_9b9b9b" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/id_tab_four_center_scrollable4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabGravity="center"
